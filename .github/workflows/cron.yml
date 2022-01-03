@@ -15,4 +15,4 @@ jobs:
       - name: Print message
         run: echo "Hello Cron!"
       - name: Run script
-        run: node main.js
+        run: node print.js
