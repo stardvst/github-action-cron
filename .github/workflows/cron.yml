@@ -27,9 +27,11 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Run server
-        run: node print.js
       - name: cURL server (GET)
-        run: curl -X GET http://localhost:8080
+        run: |
+          node print.js &
+          curl -X GET http://localhost:8080
       - name: cURL server (POST)
-        run: curl -X POST http://localhost:8080
+        run: |
+          node print.js &
+          curl -X POST http://localhost:8080
