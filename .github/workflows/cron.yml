@@ -12,8 +12,13 @@ jobs:
   print-hello-cron:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Print message
         run: echo "Hello Cron!"
+
+  execute-script:
+    runs-on: macos-latest
+    needs: print-hello-cron
+    steps:
+      - uses: actions/checkout@v2
       - name: Run script
         run: node print.js
